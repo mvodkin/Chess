@@ -7,10 +7,6 @@ class Piece
     @position, @color, @board = position, color, board
   end
 
-  def receive_board(board)
-    @board = board
-  end
-
   def move_into_check?(new_position)
     duped_board = board.dup
     duped_board.move!(position, new_position)
@@ -19,6 +15,10 @@ class Piece
 
   def valid_moves
     moves.reject { |move| move_into_check?(move) }
+  end
+
+  def receive_board(board)
+    @board = board
   end
 
   def to_symbol
