@@ -1,7 +1,6 @@
 require_relative 'cursor'
 require_relative 'board'
 require 'colorize'
-require 'byebug'
 
 class Display
 
